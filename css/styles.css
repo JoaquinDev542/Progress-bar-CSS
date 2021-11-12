@@ -1,0 +1,127 @@
+@media screen and (prefers-color-scheme:light) {
+    body {
+        background-color: #f3f3f3;
+        color: #121212;
+    }
+}
+
+@media screen and (prefers-color-scheme:dark) {
+    body {
+        background-color: #121212;
+        color: #f3f3f3;
+    }
+}
+
+:root {
+    --blue:#4c3be7;
+    --red:#b63434;
+    --green:#008000;
+    --gray:#adabab;
+}
+
+* , ::before , ::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+}
+
+.container {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    gap: 20px;
+}
+
+.progress-bar {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    background-color:#adabab;
+    background-color:var(--gray , #adabab);
+    overflow: hidden;
+}
+
+.progress-bar--blue::before , .progress-bar--red::before , .progress-bar--green::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 100%;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.progress-bar--blue::before {
+    background-color: #4c3be7;
+    background-color: var(--blue , #4c3be7);
+    -webkit-animation: showBlue 1s 1s forwards;
+            animation: showBlue 1s 1s forwards;
+}
+
+.progress-bar--red::before {
+    background-color: #b63434;
+    background-color: var(--red , #b63434);
+    -webkit-animation: showRed 1s 1s forwards;
+            animation: showRed 1s 1s forwards;
+}
+
+.progress-bar--green::before {
+    background-color: #008000;
+    background-color: var(--green , #008000);
+    -webkit-animation: showGreen 1s 1s forwards;
+            animation: showGreen 1s 1s forwards;
+}
+
+@-webkit-keyframes showBlue {
+    to {
+        width: 45%;
+    }
+}
+
+@keyframes showBlue {
+    to {
+        width: 45%;
+    }
+}
+
+@-webkit-keyframes showRed {
+    to {
+        width: 65%;
+    }
+}
+
+@keyframes showRed {
+    to {
+        width: 65%;
+    }
+}
+
+@-webkit-keyframes showGreen {
+    to {
+        width: 85%;
+    }
+}
+
+@keyframes showGreen {
+    to {
+        width: 85%;
+    }
+}
